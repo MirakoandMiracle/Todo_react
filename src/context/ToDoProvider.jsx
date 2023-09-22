@@ -6,6 +6,7 @@ const ToDoProvider = ({ children }) => {
     const [todos, setTodos] = useState([]);
 const [completedToDos, setCompletedToDos] = useState([])
     const [isCompletedFilter, setIsCompletedFilter] = useState(false)
+    const [changedDark, setChangedDark] = useState(false)
     useEffect(() => {
       const lsToDos = JSON.parse(localStorage.getItem("td_r_d"));
       lsToDos && setTodos([...lsToDos]);
@@ -44,7 +45,7 @@ const [completedToDos, setCompletedToDos] = useState([])
   localStorage.setItem("td_r_d", JSON.stringify([...editedToDo]));
 };
     return (
-      <ToDoContext.Provider value={{ todos, addToDo, deleteToDo ,editToDo, isCompletedFilter, setIsCompletedFilter, completedToDos}}>
+      <ToDoContext.Provider value={{ todos, addToDo, deleteToDo ,editToDo, isCompletedFilter, setIsCompletedFilter, completedToDos, setChangedDark,changedDark}}>
         {children}
       </ToDoContext.Provider>
     );
