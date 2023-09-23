@@ -1,32 +1,14 @@
+import "./App.css";
+import Background from "./components/Background";
 
-
-
-import './App.css'
-import Changetheme from './components/Changetheme'
-import ToDoFilter from './components/ToDoFilter'
-import ToDoForm from './components/ToDoForm/Index'
-import ToDoList from './components/ToDoList'
-
-import ToDoProvider from './context/ToDoProvider'
+import ToDoProvider from "./context/ToDoProvider";
 
 function App() {
-  
-
   return (
     <ToDoProvider>
-      <div className="h-screen bg-[url('https://images.unsplash.com/photo-1555231964-2efe395ef6a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGluayUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60')] w-full md:w-[60%] mx-auto bg-cover rounded ">
-    <div className='bg-red-100 bg-opacity-70 p-2 md:px-5 md:py-4 h-screen'>
-      <ToDoForm/>
-      <div className='flex justify-end mt-5 '>
-        <ToDoFilter/> 
-      <Changetheme/>
-      </div>
-   <ToDoList/>
-  </div>
-  </div>
-</ToDoProvider>
-    
-  )
+      <Background />
+    </ToDoProvider>
+  );
 }
 
-export default App
+export default App;

@@ -1,19 +1,22 @@
 import { useContext, useRef, useState } from "react";
-import { RiEdit2Fill, RiDeleteBin2Fill ,   RiCheckFill,
-  RiCloseFill} from "react-icons/ri";
+import {
+  RiEdit2Fill,
+  RiDeleteBin2Fill,
+  RiCheckFill,
+  RiCloseFill,
+} from "react-icons/ri";
 import { ToDoContext } from "../../context/ToDoProvider";
 import complete from "../../assets/completed.mp3";
 const ToDoItem = ({ todo }) => {
-  const { deleteToDo , editToDo} = useContext(ToDoContext);
+  const { deleteToDo, editToDo, changedDark } = useContext(ToDoContext);
   const [isEditMode, setIsEditMode] = useState(false);
   const [isReadOnly, setIsReadOnly] = useState(true);
   const refEditInput = useRef(null);
   const refAudio = useRef(new Audio(complete));
 
-  const DeleteHandler=()=>{
-    deleteToDo(todo.id)
-  }
-
+  const DeleteHandler = () => {
+    deleteToDo(todo.id);
+  };
 
   const EditHandler = () => {
     setIsEditMode(true);
@@ -35,10 +38,9 @@ const ToDoItem = ({ todo }) => {
   };
 
   const CompleteCheckHandler = (e) => {
-  
     if (e.target.checked) {
       refAudio.current.volume = 0.8;
-     
+
       refAudio.current.play();
     }
     todo.completed = e.target.checked;
@@ -46,7 +48,11 @@ const ToDoItem = ({ todo }) => {
   };
 
   return (
-    <div className="flex mt-4 justify-between items-center  bg-red-200 py-1 px-2 md:py-4 md:px-5 rounded">
+    <div
+      className={`flex mt-4 justify-between items-center ${
+        !changedDark ? " bg-red-200" : "bg-gray-100"
+      } py-1 px-2 md:py-4 md:px-5 rounded`}
+    >
       <div className="flex gap-6 items-center w-[80%]">
         <input
           type="checkbox"
@@ -62,8 +68,8 @@ const ToDoItem = ({ todo }) => {
           defaultValue={todo.text}
           readOnly={isReadOnly}
           className={`outline-none bg-transparent  text-[10px] md:text-[15px]
-          text-red-400 font-medium w-full ${
-            !isEditMode && todo.completed ? "line-through" : ""
+         ${!changedDark ? " text-red-400" : "text-black"} font-medium w-full ${
+            !isEditMode && todo.completed ? "line-through text-gray-500" : ""
           }`}
           onKeyUp={(e) => {
             if (e.key === "Enter") {
@@ -71,28 +77,44 @@ const ToDoItem = ({ todo }) => {
             }
           }}
         />
-       
       </div>
       {isEditMode ? (
         <div className="flex items-center">
           <button className="mr-2 md:mr-5" onClick={SaveChangeHandler}>
-            <RiCheckFill  className="text-red-400 text-[10px] md:text-[18px] hover:text-red-700" />
+            <RiCheckFill
+              className={`${
+                !changedDark ? "text-red-400" : "text-black"
+              } text-[10px] md:text-[18px] hover:text-red-700`}
+            />
           </button>
           <button onClick={CancelHandler}>
-            <RiCloseFill  className="text-red-500 text-[10px] md:text-[18px] hover:text-red-700" />
+            <RiCloseFill
+              className={`${
+                !changedDark ? "text-red-500" : "text-black"
+              } text-[10px] md:text-[18px] hover:text-red-700`}
+            />
           </button>
         </div>
       ) : (
-      <div className="flex items-center">
-        <button className="mr-2 md:mr-5" onClick={EditHandler}>
-          <RiEdit2Fill  className="text-red-400 text-[10px] md:text-[18px] hover:text-red-700 " />
-        </button>
-        <button onClick={DeleteHandler}>
-          <RiDeleteBin2Fill  className="text-red-500 text-[10px] md:text-[18px] hover:text-red-700" />
-        </button>
-      </div>)}
+        <div className="flex items-center">
+          <button className="mr-2 md:mr-5" onClick={EditHandler}>
+            <RiEdit2Fill
+              className={`${
+                !changedDark ? "text-red-400" : "text-black"
+              } text-[10px] md:text-[18px] hover:text-red-700`}
+            />
+          </button>
+          <button onClick={DeleteHandler}>
+            <RiDeleteBin2Fill
+              className={`${
+                !changedDark ? "text-red-500" : "text-black"
+              } text-[10px] md:text-[18px] hover:text-red-700`}
+            />
+          </button>
+        </div>
+      )}
     </div>
   );
 };
 
-export default ToDoItem
+export default ToDoItem;
