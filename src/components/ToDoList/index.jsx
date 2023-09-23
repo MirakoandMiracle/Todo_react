@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ToDoContext } from "../../context/ToDoProvider";
-import ToDoItem from "./Todoitem";
+import ToDoItem from "./ToDoItem";
 
 const ToDoList = () => {
   const { todos, isCompletedFilter, completedToDos, changedDark } =
