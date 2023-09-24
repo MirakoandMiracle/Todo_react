@@ -33,7 +33,7 @@ const ToDoList = () => {
             <h2
               className={`${
                 !changedDark ? "text-red-400" : "text-white"
-              } text-[12px] md:text-[17px] font-medium`}
+              } text-[14px] md:text-[17px] font-medium`}
             >
               Completed Tasks
             </h2>

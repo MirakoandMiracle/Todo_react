@@ -18,7 +18,7 @@ const Background = () => {
       <div
         className={`${
           !changedDark ? "bg-red-100" : "bg-gray-900"
-        } bg-opacity-70 p-2 md:px-5 md:py-4 h-screen`}
+        } bg-opacity-70 px-2 md:px-5 py-4 h-screen `}
       >
         <ToDoForm />
         <div className="flex justify-end mt-5 ">

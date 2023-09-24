@@ -17,7 +17,7 @@ const ToDoFilter = () => {
       <label
         className={`${
           !changedDark ? "text-red-400" : "text-white"
-        } ml-2 cursor-pointer font-medium text-[12px] md:text-[15px]" htmlFor='chkfilter'`}
+        } ml-2 cursor-pointer font-medium text-[15px] md:text-[18px]" htmlFor='chkfilter'`}
       >
         {" "}
         Completed

@@ -11,7 +11,7 @@ const Changetheme = () => {
       <div
         className={`${
           changedDark ? "bg-white text-black" : "bg-black text-white"
-        }  rounded ml-3 text-[11px] md:text-[14px] py-1 px-2 md:py-2 md:px-3 cursor-pointer`}
+        }  rounded ml-3 text-[14px] md:text-[16px] p-2 md:py-2 md:px-3 cursor-pointer`}
         onClick={toggleTheme}
       >
         {changedDark ? "Default" : "Dark"}

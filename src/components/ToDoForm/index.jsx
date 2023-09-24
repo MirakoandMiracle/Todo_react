@@ -39,7 +39,7 @@ const ToDoForm = () => {
           id="todo"
           placeholder="Enter your tasks"
           ref={refTask} //const t=document.getElementByID("todo")
-          className="w-[95%] md:w-[90%] outline-none py-1 px-2 md:py-2 md:px-3 rounded shadow-lg text-[10px] md:text-[16px]"
+          className="w-[95%] md:w-[90%] outline-none p-2 md:py-2 md:px-3 rounded shadow-lg text-[15px] md:text-[18px]"
           onChange={() => {
             if (refTask.current.value) {
               refTask.current.classList.remove("border-red-500", "border-2");
@@ -50,7 +50,7 @@ const ToDoForm = () => {
           <BsFillPlusSquareFill
             className={`${
               !changedDark ? "text-red-400" : "text-white"
-            } text-[25px] md:text-[42px] hover:text-pink-700`}
+            } text-[30px] md:text-[42px] hover:text-pink-700`}
           />
         </button>
       </div>
