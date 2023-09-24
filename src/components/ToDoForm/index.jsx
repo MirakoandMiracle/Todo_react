@@ -32,14 +32,14 @@ const ToDoForm = () => {
   };
   return (
     <form onSubmit={(e) => formSubmitHandler(e)}>
-      <div className="flex gap-6">
+      <div className="flex md:gap-6 gap-3 items-center">
         <input
           type="text"
           name="todo"
           id="todo"
           placeholder="Enter your tasks"
           ref={refTask} //const t=document.getElementByID("todo")
-          className="w-[95%] md:w-[90%] outline-none p-2 md:py-2 md:px-3 rounded shadow-lg text-[15px] md:text-[18px]"
+          className="w-full md:w-[90%] outline-none p-2 md:py-2 md:px-3 rounded shadow-lg text-[15px] md:text-[18px]"
           onChange={() => {
             if (refTask.current.value) {
               refTask.current.classList.remove("border-red-500", "border-2");
@@ -50,7 +50,7 @@ const ToDoForm = () => {
           <BsFillPlusSquareFill
             className={`${
               !changedDark ? "text-red-400" : "text-white"
-            } text-[30px] md:text-[42px] hover:text-pink-700`}
+            } text-[35px] md:text-[42px] hover:text-pink-700`}
           />
         </button>
       </div>

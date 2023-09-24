@@ -9,7 +9,7 @@ const ToDoFilter = () => {
         type="checkbox"
         name="chkfilter"
         id="chkfilter"
-        className="w-3 md:w-5"
+        className="w-4 md:5"
         onChange={(e) => {
           setIsCompletedFilter(e.target.checked);
         }}

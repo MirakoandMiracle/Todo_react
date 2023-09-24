@@ -80,35 +80,35 @@ const ToDoItem = ({ todo }) => {
       </div>
       {isEditMode ? (
         <div className="flex items-center">
-          <button className="mr-4 md:mr-5" onClick={SaveChangeHandler}>
+          <button className="mr-5 md:mr-6" onClick={SaveChangeHandler}>
             <RiCheckFill
               className={`${
                 !changedDark ? "text-red-400" : "text-black"
-              } text-[15px] md:text-[18px] hover:text-red-700`}
+              } text-[20px] md:text-[25px] hover:text-red-700`}
             />
           </button>
           <button onClick={CancelHandler}>
             <RiCloseFill
               className={`${
                 !changedDark ? "text-red-500" : "text-black"
-              } text-[15px] md:text-[18px] hover:text-red-700`}
+              } text-[20px] md:text-[25px] hover:text-red-700`}
             />
           </button>
         </div>
       ) : (
         <div className="flex items-center">
-          <button className="mr-4 md:mr-5" onClick={EditHandler}>
+          <button className="mr-5 md:mr-6" onClick={EditHandler}>
             <RiEdit2Fill
               className={`${
                 !changedDark ? "text-red-400" : "text-black"
-              } text-[15px] md:text-[18px] hover:text-red-700`}
+              } text-[20px] md:text-[25px] hover:text-red-700`}
             />
           </button>
           <button onClick={DeleteHandler}>
             <RiDeleteBin2Fill
               className={`${
                 !changedDark ? "text-red-500" : "text-black"
-              } text-[15px] md:text-[18px] hover:text-red-700`}
+              } text-[20px] md:text-[25px] hover:text-red-700`}
             />
           </button>
         </div>
